@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sng_home",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":3,
+  "conversionMode":0,
+  "duration":100.78984,
+  "name":"sng_home",
+  "parent":{
+    "name":"bgm",
+    "path":"folders/Sounds/bgm.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sng_home.ogg",
+  "type":1,
+  "volume":1.0,
+}

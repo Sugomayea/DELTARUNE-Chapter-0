@@ -1,0 +1,1 @@
+playerDirect = 0

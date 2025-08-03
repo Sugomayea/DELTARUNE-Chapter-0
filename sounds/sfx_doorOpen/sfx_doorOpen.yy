@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sfx_doorOpen",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":512,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.4368254,
+  "name":"sfx_doorOpen",
+  "parent":{
+    "name":"sfx",
+    "path":"folders/Sounds/sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_doorOpen.wav",
+  "type":1,
+  "volume":0.75,
+}

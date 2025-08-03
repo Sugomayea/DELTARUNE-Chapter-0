@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_txtund",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":512,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.06530612,
+  "name":"snd_txtund",
+  "parent":{
+    "name":"charSounds",
+    "path":"folders/Sounds/charSounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_txtund.wav",
+  "type":1,
+  "volume":1.0,
+}
