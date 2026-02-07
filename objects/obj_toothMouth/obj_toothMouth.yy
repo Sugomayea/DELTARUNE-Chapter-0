@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"hospitalAttendant",
-    "path":"sprites/hospitalAttendant/hospitalAttendant.yy",
+    "name":"spr_hospitalAttendant",
+    "path":"sprites/spr_hospitalAttendant/spr_hospitalAttendant.yy",
   },
   "spriteMaskId":null,
   "visible":true,

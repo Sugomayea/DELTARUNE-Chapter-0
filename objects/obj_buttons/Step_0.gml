@@ -30,79 +30,31 @@ if (menu = 2) {
 	if (keyboard_check_pressed(global.cancelButton)) {
 		audio_play_sound(sfx_select, 10, false)
 		menu = 1
-		selected = 1
+		selected = 2
 	}
 }
 
 //menu 3 controls
 if (menu = 3) {
-	if (timer <= 0) {
+	if timer <= 0 {	
 		if (selected = 0 and global.selectButtonPressed) {
 			audio_play_sound(sfx_select, 10, false)
-			control = 0
-			menu = 4
+			menu = 6
 			selected = 0
-			letter = obj_title.selectKey
-			timer2 = 1
+			timer4 = 1
+			movementOrMisc = "movement"
 		}
 	}
 	timer--
+	
 	if (selected = 1 and global.selectButtonPressed) {
 		audio_play_sound(sfx_select, 10, false)
-		control = 1
-		menu = 4
+		menu = 7
 		selected = 0
-		letter = obj_title.cancelKey
-		timer2 = 1
+		timer4 = 1
+		movementOrMisc = "misc"
 	}
-	if (selected = 2 and global.selectButtonPressed) {
-		audio_play_sound(sfx_select, 10, false)
-		control = 2
-		menu = 4
-		selected = 0
-		letter = obj_title.sprintKey
-		timer2 = 1
-	}
-	if (selected = 3 and global.selectButtonPressed) {
-		audio_play_sound(sfx_select, 10, false)
-		control = 3
-		menu = 4
-		selected = 0
-		letter = obj_title.menuKey
-		timer2 = 1
-	}
-	if (selected = 4 and global.selectButtonPressed) {
-		audio_play_sound(sfx_select, 10, false)
-		control = 4
-		menu = 4
-		selected = 0
-		letter = obj_title.upKey
-		timer2 = 1
-	}
-	if (selected = 5 and global.selectButtonPressed) {
-		audio_play_sound(sfx_select, 10, false)
-		control = 5
-		menu = 4
-		selected = 0
-		letter = obj_title.downKey
-		timer2 = 1
-	}
-	if (selected = 6 and global.selectButtonPressed) {
-		audio_play_sound(sfx_select, 10, false)
-		control = 6
-		menu = 4
-		selected = 0
-		letter = obj_title.leftKey
-		timer2 = 1
-	}
-	if (selected = 7 and global.selectButtonPressed) {
-		audio_play_sound(sfx_select, 10, false)
-		control = 7
-		menu = 4
-		selected = 0
-		letter = obj_title.rightKey
-		timer2 = 1
-	}
+	
 	//cancel
 	if (keyboard_check_pressed(global.cancelButton)) {
 		audio_play_sound(sfx_select, 10, false)
@@ -339,13 +291,116 @@ if (menu = 4 and timer2 <= 0) {
 	
 	if (keyboard_check_pressed(global.cancelButton)) {
 		audio_play_sound(sfx_select, 10, false)
-		menu = 3
-		selected = control
+		if movementOrMisc == "movement" {
+			menu = 6
+			selected = control - 4
+			timer5 = 1
+		} else if movementOrMisc == "misc" {
+			menu = 7
+			selected = control
+			timer5 = 1
+		}
 	}
 }
 
 if (menu = 4) {
 	timer2--
+}
+
+if (menu = 6) {
+	if timer4 <= 0 {	
+		if (selected = 0 and global.selectButtonPressed) {
+			audio_play_sound(sfx_select, 10, false)
+			control = 4
+			menu = 4
+			selected = 0
+			letter = obj_title.upKey
+			timer2 = 1
+		}
+	}
+	timer4--
+	if (selected = 1 and global.selectButtonPressed) {
+		audio_play_sound(sfx_select, 10, false)
+		control = 5
+		menu = 4
+		selected = 0
+		letter = obj_title.downKey
+		timer2 = 1
+	}
+	if (selected = 2 and global.selectButtonPressed) {
+		audio_play_sound(sfx_select, 10, false)
+		control = 6
+		menu = 4
+		selected = 0
+		letter = obj_title.leftKey
+		timer2 = 1
+	}
+	if (selected = 3 and global.selectButtonPressed) {
+		audio_play_sound(sfx_select, 10, false)
+		control = 7
+		menu = 4
+		selected = 0
+		letter = obj_title.rightKey
+		timer2 = 1
+	}
+	
+	if (timer5 <= 0) {
+		//cancel
+		if (keyboard_check_pressed(global.cancelButton)) {
+			audio_play_sound(sfx_select, 10, false)
+			menu = 3
+			selected = 0
+		}
+	}
+	timer5--
+}
+
+if (menu = 7) {
+	if (timer4 <= 0) {
+		if (selected = 0 and global.selectButtonPressed) {
+			audio_play_sound(sfx_select, 10, false)
+			control = 0
+			menu = 4
+			selected = 0
+			letter = obj_title.selectKey
+			timer2 = 1
+		}
+	}
+	timer4--
+	if (selected = 1 and global.selectButtonPressed) {
+		audio_play_sound(sfx_select, 10, false)
+		control = 1
+		menu = 4
+		selected = 0
+		letter = obj_title.cancelKey
+		timer2 = 1
+	}
+	if (selected = 2 and global.selectButtonPressed) {
+		audio_play_sound(sfx_select, 10, false)
+		control = 2
+		menu = 4
+		selected = 0
+		letter = obj_title.sprintKey
+		timer2 = 1
+	}
+	if (selected = 3 and global.selectButtonPressed) {
+		audio_play_sound(sfx_select, 10, false)
+		control = 3
+		menu = 4
+		selected = 0
+		letter = obj_title.menuKey
+		timer2 = 1
+	}
+	
+	if (timer5 <= 0) {
+		//cancel
+		if (keyboard_check_pressed(global.cancelButton)) {
+			audio_play_sound(sfx_select, 10, false)
+			menu = 3
+			selected = 1
+		}
+	}
+	timer5--
 }
 
 //controls
@@ -369,8 +424,36 @@ if (global.leftButtonPressed1 and menu = 4) {
 	audio_play_sound(sfx_move, 10, false)
 }
 
+if (global.rightButtonPressed1 and menu = 1 and selected == 2) {
+	selected = 0
+	audio_play_sound(sfx_move, 10, false)
+} else if (global.rightButtonPressed1 and menu = 1 and selected == 3) {
+	selected = 1
+	audio_play_sound(sfx_move, 10, false)
+} else if (global.rightButtonPressed1 and menu = 1 and selected == 4) {
+	selected = 3
+	audio_play_sound(sfx_move, 10, false)
+} else if (global.rightButtonPressed1 and menu = 1) {
+	selected += 2
+	audio_play_sound(sfx_move, 10, false)
+}
+
+if (global.leftButtonPressed1 and menu = 1 and selected == 0) {
+	selected = 2
+	audio_play_sound(sfx_move, 10, false)
+} else if (global.leftButtonPressed1 and menu = 1 and selected == 1) {
+	selected = 3
+	audio_play_sound(sfx_move, 10, false)
+} else if (global.leftButtonPressed1 and menu = 1) {
+	selected -= 2
+	audio_play_sound(sfx_move, 10, false)
+}
+
+//constraints
 if (menu = 1) {
-	if (selected < 0) {
+	if selected == -2 {
+		selected = 2
+	} else if (selected < 0) {
 		selected = 3
 	}
 	if (selected > 3) {
@@ -389,9 +472,9 @@ if (menu = 2) {
 
 if (menu = 3) {
 	if (selected < 0) {
-		selected = 7
+		selected = 1
 	}
-	if (selected > 7) {
+	if (selected > 1) {
 		selected = 0
 	}
 }
@@ -403,4 +486,13 @@ if (menu = 4) {
 	if (selected > 25) {
 		selected = 0
 	}
+}
+
+if (menu = 6 or menu = 7) {
+	if (selected < 0) {
+		selected = 3
+	}
+	if (selected > 3) {
+		selected = 0
+	} 
 }

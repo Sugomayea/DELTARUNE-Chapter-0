@@ -1,12 +1,16 @@
 //animate
 if (inparty = true and global.rightButtonPressed) {
 	sprite_index = spr_BlookR
+	image_speed = 1
 } else if (inparty = true and global.leftButtonPressed) {
 	sprite_index = spr_BlookL
+	image_speed = 1
 } else if (inparty = true and global.downButtonPressed) {
 	sprite_index = spr_BlookD
+	image_speed = 1
 } else if (inparty = true and global.upButtonPressed) {
 	sprite_index = spr_BlookU
+	image_speed = 1
 }
 
 //step when move key is tapped

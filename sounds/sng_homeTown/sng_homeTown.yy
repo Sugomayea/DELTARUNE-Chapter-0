@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"sng_homeTown",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":320,
+  "channelFormat":1,
   "compression":3,
+  "compressionQuality":9,
   "conversionMode":0,
-  "duration":113.14286,
+  "duration":0.0,
+  "exportDir":"",
   "name":"sng_homeTown",
   "parent":{
     "name":"bgm",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sng_homeTown.ogg",
-  "type":1,
   "volume":1.0,
 }

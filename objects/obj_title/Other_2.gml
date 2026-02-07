@@ -30,13 +30,8 @@ global.p0 = 0 //undyne
 global.p1 = 1 //blooky
 
 //room ids
-global.rm0 = rm_asgoreRoom
-global.rm1 = rm_yourHallway
-global.rm2 = rm_krisAzzy
-global.rm3 = rm_yourHouse
-global.rm4 = rm_yourBath
-global.rm5 = rm_ToriHouse
-global.rm6 = hometownTop
+global.rm0 = rm_yourHallway
+global.rm1 = rm_hometownMiddleTop
 
 if file_exists("CHAPTER0.ini") {
 	instance_create_depth(121.5, 72, 100, obj_buttons_continue)
@@ -89,4 +84,5 @@ with(mControl){
 	registerControl("dialogue", false);
 }
 
-layer_depth(layer_get_id("Dialogue"), -999)
+if !variable_global_exists("run_map") global.run_map = ds_map_create();
+if !variable_global_exists("menu_fn_map") global.menu_fn_map = ds_map_create();

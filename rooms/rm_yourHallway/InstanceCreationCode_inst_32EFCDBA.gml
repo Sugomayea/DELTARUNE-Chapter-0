@@ -1,9 +1,4 @@
-room_to_save = global.rm1
+room_to_save = global.rm0
 
-//rm0 = asgoreRoom
-//rm1 = yourHallway
-//rm2 = krisAzzy
-//rm3 = yourHouse
-//rm4 = yourBath
-//rm5 = ToriHouse
-//rm6 = hoemtownTop
+//rm0 = yourHallway
+//rm1 = hometownMiddleTop

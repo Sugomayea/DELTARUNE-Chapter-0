@@ -1,6 +1,6 @@
 /// CREATE EVENT
-global.run_map = ds_map_create();
-global.menu_fn_map = ds_map_create();
+if !variable_global_exists("run_map") global.run_map = ds_map_create();
+if !variable_global_exists("menu_fn_map") global.menu_fn_map = ds_map_create();
 
 text_lines = [
     "I'm the original    <<highlight=dw_yellow&hasshadow=true&h_shadow=dw_yellow>>Starwalker",
@@ -396,7 +396,7 @@ box to match how you want it!
 	dialogue_sprite   = dlg_darkworld;	--- Dialogue Box BG Sprite
 	box_visible       = true;			--- If the dialogue box is visible (Doesn't matter if dialogue_sprite has a sprite or not)
 	char_visible      = true;			--- If the char sprite should be visible (Doesn't matter if char_sprite has a sprite or not)
-	default_sound     = vc_text;		--- Starting "Voice" for text, later on it changes if you use the sound command mid dialogue
+	default_sound     = snd_txt;		--- Starting "Voice" for text, later on it changes if you use the sound command mid dialogue
 	default_font = fnt_dialogue;		--- Starting Font for text, can change with font command mid dialogue
 
 	--- These base char stuff are default for the character sprite box
@@ -573,21 +573,21 @@ That's all for now i think, Thanks for using this! If you can give credits then 
 
 
 //my very own functions! :)
-function scr_animateObject(objectToAnimate, speedToAnimate) {
+function animateObject(objectToAnimate, speedToAnimate) {
 	var theOb = instance_find(objectToAnimate, 0)
 	var spriteToChange = theOb.sprite_index
 	theOb.image_index = 1
 	sprite_set_speed(spriteToChange, speedToAnimate, spritespeed_framespersecond)
 }
-ds_map_add(global.run_map, "scr_animateObject", scr_animateObject)
+ds_map_add(global.run_map, "animateObject", animateObject)
 
-function scr_stopAnimateObject(objectToNotAnimate) {
+function stopAnimateObject(objectToNotAnimate) {
 	var theOb = instance_find(objectToNotAnimate, 0)
 	var spriteToChange = theOb.sprite_index
 	sprite_set_speed(spriteToChange, 0, spritespeed_framespersecond)
 	theOb.image_index = 0
 }
-ds_map_add(global.run_map, "scr_stopAnimateObject", scr_stopAnimateObject)
+ds_map_add(global.run_map, "stopAnimateObject", stopAnimateObject)
 //my very own functions ends here...
 
 function disableDaDialogue() {
@@ -771,7 +771,7 @@ char_visible      = true;
 default_font = fnt_main;
 
 voice_enabled = true;
-default_sound     = vc_text;
+default_sound     = snd_txt;
 sound_vol = 1;
 sound_pitch = 1;
 sound_loop = false;
@@ -811,7 +811,7 @@ unskippable    = false;
 w_padding      = (char_sprite != spr_none && char_visible) ? box_wrap_spr : box_wrap_none;
 wrap_w         = box_width + w_padding;
 
-menu_font = fnt_title;
+menu_font = fnt_main;
 menu_active    = false;
 menu_options   = [];
 menu_fns       = [];

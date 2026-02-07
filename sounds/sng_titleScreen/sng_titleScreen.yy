@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"sng_titleScreen",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":512,
+  "channelFormat":1,
   "compression":3,
+  "compressionQuality":10,
   "conversionMode":0,
-  "duration":109.78891,
+  "duration":42.666668,
+  "exportDir":"",
   "name":"sng_titleScreen",
   "parent":{
     "name":"bgm",
@@ -18,8 +20,7 @@
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
-  "sampleRate":44100,
+  "sampleRate":48000,
   "soundFile":"sng_titleScreen.ogg",
-  "type":1,
-  "volume":0.8,
+  "volume":0.3,
 }

@@ -1,7 +1,7 @@
 /// @description play the right music
 
 if (room == rm_title) {
-	scr_musicFunc(sng_titleScreen, 0, 0, 0.7)
+	scr_musicFunc(sng_titleScreen, 0, 0, 1)
 }
 
 if (room == rm_asgoreRoom or room == rm_krisAzzy or room == rm_yourBath or room == rm_yourHallway or room == rm_yourHouse) {

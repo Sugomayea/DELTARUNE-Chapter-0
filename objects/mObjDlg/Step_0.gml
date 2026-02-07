@@ -191,17 +191,25 @@ if (menu_active) {
         switch (n) {
             case 1:
                 menu_selection = 0;
+				audio_play_sound(sfx_move, 10, false)
                 break;
 
             case 2:
-                if (lBut) menu_selection = 0;
-                else if (rBut) menu_selection = 1;
+                if (lBut) { 
+					menu_selection = 0;
+					audio_play_sound(sfx_move, 10, false)
+				} else if (rBut) { 
+					menu_selection = 1;
+					audio_play_sound(sfx_move, 10, false)
+				}
                 break;
 
             case 3:
-                if (uBut) menu_selection = 1;
-                else if (lBut || rBut) {
+                if (uBut){ 
+					menu_selection = 1;
+				} else if (lBut || rBut) {
                     menu_selection = lBut ? 0 : 2;
+					audio_play_sound(sfx_move, 10, false)
                 }
                 break;
 
@@ -220,21 +228,26 @@ if (menu_active) {
             case 2:
                 if (lBut && menu_selection > 0) {
                     menu_selection--;
+					audio_play_sound(sfx_move, 10, false)
                 }
                 else if (rBut && menu_selection < 1) {
                     menu_selection++;
+					audio_play_sound(sfx_move, 10, false)
                 }
                 break;
 
             case 3:
                 if (uBut && (menu_selection == 0 || menu_selection == 2)) {
                     menu_selection = 1;
+					audio_play_sound(sfx_move, 10, false)
                 }
                 else if (lBut && (menu_selection == 1 || menu_selection == 2)) {
                     menu_selection = 0;
+					audio_play_sound(sfx_move, 10, false)
                 }
                 else if (rBut && (menu_selection == 0 || menu_selection == 1)) {
                     menu_selection = 2;
+					audio_play_sound(sfx_move, 10, false)
                 }
                 break;
 
@@ -263,6 +276,7 @@ if (menu_active) {
         }
 
         if (selBut) {
+			audio_play_sound(sfx_select, 10, false)
 			var chosen = menu_selection;
     
 			    if (chosen >= 0 && chosen < array_length(menu_fns)) {

@@ -7,8 +7,8 @@ interactAct = function(){
     with(inst){
         text_lines = [
             "<<voice=snd_txtund>><<face=spr_UndyneDlgSideEye>>....",
-			"<<voice=snd_txtund>><<face=spr_UndyneDlgTweaking>>No.",
-			"<<voice=snd_txtund>><<face=spr_UndyneDlgTweaking>>We are not going in there."
+			"<<face=spr_UndyneDlgTweaking>>No.",
+			"We are not going in there."
         ]
         init_dialogue()
     }    

@@ -4,12 +4,6 @@ var down  = global.downButtonPressed && cEnabled;
 var left  = global.leftButtonPressed && cEnabled;
 var right = global.rightButtonPressed && cEnabled;
 var sprint= global.sprintButtonHeld && cEnabled;
-var tap = (
-    (global.upButtonPressed1 || global.downButtonPressed1 ||
-     global.leftButtonPressed1 || global.rightButtonPressed1)
-    &&
-    !(up || down || left || right) && cEnabled // ← ensures no key is held
-);
 var select= global.selectButtonPressed && cEnabled;
 
 move_spd = sprint ? run_spd : walk_spd;
@@ -126,15 +120,6 @@ if (xspd != 0 or yspd != 0) {
 	image_index = 0
 }
 
-//step when move key is tapped
-
-if (global.upButtonPressed1 or global.downButtonPressed1 or global.rightButtonPressed1 or global.leftButtonPressed1) {
-	if (isStopped = false) {	
-		image_index = 1
-		endpress = true
-	}
-}
-
 //don't shake
 x[0] = round(x[0.1])
 y[0] = round(y[0.1])
@@ -186,3 +171,5 @@ if (place_meeting(x, y, obj_save)) {
 		player_y[0] = y
 		past_facing[0] = sprite_index
 	}
+	
+	

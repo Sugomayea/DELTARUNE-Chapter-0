@@ -1,12 +1,12 @@
 //animate
-if (inparty = true and global.rightButtonPressed) {
-	sprite_index = spr_UndyneR
-} else if (inparty = true and global.leftButtonPressed) {
+if (inparty = true and global.leftButtonPressed) {
 	sprite_index = spr_UndyneL
 } else if (inparty = true and global.downButtonPressed) {
 	sprite_index = spr_UndyneD
 } else if (inparty = true and global.upButtonPressed) {
 	sprite_index = spr_UndyneU
+} else if (inparty = true and global.rightButtonPressed) {
+	sprite_index = spr_UndyneR
 }
 
 //step when move key is tapped

@@ -1,4 +1,3 @@
-/// @description runs on creation
 // def variables
 xspd = 0
 yspd = 0
@@ -36,7 +35,7 @@ if (facing_direction = 3) {
 ini_close()
 
 //store past positions for the party
-follow_points = 100
+follow_points = 80
 for(follow_pos = follow_points - 1 ; follow_pos >= 0 ; follow_pos--) {
 	player_x[follow_pos] = x
 	player_y[follow_pos] = y
