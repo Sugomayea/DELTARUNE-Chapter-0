@@ -11,3 +11,11 @@ room_to_save = global.rm0
 if (global.party_exists = true) {
 	scr_party(global.party_member_1, global.party_member_2, false)
 }
+
+box = 0
+pos = 1
+lines = ["(You are filled with the power of a default string.)"]
+
+wait = false
+
+timer = 1

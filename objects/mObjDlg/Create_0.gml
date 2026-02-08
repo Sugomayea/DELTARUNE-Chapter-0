@@ -9,15 +9,11 @@ text_lines = [
 #region Help Code!
 /*
 ————————————————————————————————————————————————————————————————————————————————————————————
- __   _______      ___  ___   ___  _      _                      ___         _             
- \ \ / /_  ( )___ |   \| _ \ |   \(_)__ _| |___  __ _ _  _ ___  / __|_  _ __| |_ ___ _ __  
-  \ V / / /|/(_-< | |) |   / | |) | / _` | / _ \/ _` | || / -_) \__ \ || (_-<  _/ -_) '  \ 
-   |_| /___| /__/ |___/|_|_\ |___/|_\__,_|_\___/\__, |\_,_\___| |___/\_, /__/\__\___|_|_|_|
-                                                |___/                |__/                  
+A SYSTEM OF LIES           
 ————————————————————————————————————————————————————————————————————————————————————————————
 
-If you have any doubts, don't be afraid to ask for help!
-I'm @yad_zero in Noelle's Discord server!
+If you have any doubts, don't be afraid to ask AI, like I did!
+I'm GONE from Noelle's Discord server!
 
 ===========================
  Dialogue Inline Commands

@@ -9,8 +9,8 @@
   "name":"obj_title",
   "overriddenProperties":[],
   "parent":{
-    "name":"functional objs",
-    "path":"folders/Objects/functional objs.yy",
+    "name":"title",
+    "path":"folders/Objects/functional objs/title.yy",
   },
   "parentObjectId":null,
   "persistent":false,

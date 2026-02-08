@@ -8,8 +8,8 @@
   "name":"mSfx",
   "overriddenProperties":[],
   "parent":{
-    "name":"functional objs",
-    "path":"folders/Objects/functional objs.yy",
+    "name":"persistent",
+    "path":"folders/Objects/functional objs/persistent.yy",
   },
   "parentObjectId":null,
   "persistent":true,
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_misc",
-    "path":"sprites/spr_misc/spr_misc.yy",
+    "name":"spr_audio",
+    "path":"sprites/spr_audio/spr_audio.yy",
   },
   "spriteMaskId":null,
   "visible":false,

@@ -9,8 +9,8 @@
   "name":"obj_save",
   "overriddenProperties":[],
   "parent":{
-    "name":"functional objs",
-    "path":"folders/Objects/functional objs.yy",
+    "name":"save",
+    "path":"folders/Objects/functional objs/save.yy",
   },
   "parentObjectId":null,
   "persistent":false,

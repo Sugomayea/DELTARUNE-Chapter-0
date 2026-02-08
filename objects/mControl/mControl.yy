@@ -9,8 +9,8 @@
   "name":"mControl",
   "overriddenProperties":[],
   "parent":{
-    "name":"functional objs",
-    "path":"folders/Objects/functional objs.yy",
+    "name":"persistent",
+    "path":"folders/Objects/functional objs/persistent.yy",
   },
   "parentObjectId":null,
   "persistent":true,

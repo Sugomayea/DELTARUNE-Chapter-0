@@ -5,6 +5,8 @@ global.start_y = 120
 
 global.new_game = false
 
+global.selectedColor = #FDDA0D
+
 global.party_exists = false
 global.entered_new_room = false
 

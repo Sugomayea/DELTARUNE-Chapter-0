@@ -9,5 +9,8 @@ timer2 = 0
 timer3 = 0
 timer4 = 0
 timer5 = 0
+timer6 = 0
 
 movementOrMisc = NaN
+
+selectedColor = global.selectedColor

@@ -1,10 +1,14 @@
 var cEnabled = mControl.isControlEnabled("player")
-var up    = global.upButtonPressed && cEnabled;
-var down  = global.downButtonPressed && cEnabled;
-var left  = global.leftButtonPressed && cEnabled;
-var right = global.rightButtonPressed && cEnabled;
+var up    = global.upButtonPressed && cEnabled && canMove = true;
+var down  = global.downButtonPressed && cEnabled && canMove = true;
+var left  = global.leftButtonPressed && cEnabled && canMove = true;
+var right = global.rightButtonPressed && cEnabled && canMove = true;
 var sprint= global.sprintButtonHeld && cEnabled;
 var select= global.selectButtonPressed && cEnabled;
+
+if instance_exists(mObjDlg) {
+	canMove = false
+}
 
 move_spd = sprint ? run_spd : walk_spd;
 
@@ -58,9 +62,10 @@ if (select) {
     }
 }
 
-
-x += xspd
-y += yspd
+if canMove = true {
+	x += xspd
+	y += yspd
+}
 
 if((xspd > 0 and sprint) and global.playerOutfit = 1){
 	sprite_index = spr_PogoreR
@@ -112,12 +117,43 @@ if((xspd > 0 and sprint) and global.playerOutfit = 1){
 	image_speed = 1
 }
 
-if (xspd != 0 or yspd != 0) {
+if (xspd != 0 or yspd != 0) and canMove = true {
 	isStopped = false
 } else {
 	isStopped = true
 	image_speed = 0
 	image_index = 0
+}
+
+if (global.upButtonPressed1 or global.downButtonPressed1 or global.rightButtonPressed1 or global.leftButtonPressed1) and canMove = true {
+	image_index = 1
+	
+	if xspd = 0 and yspd = 0 {
+		if global.downButtonPressed1 and global.playerOutfit = 1 {
+			sprite_index = spr_PogoreD
+		} else if global.downButtonPressed1 {
+			sprite_index = spr_AsgoreD
+		}
+		
+		if global.upButtonPressed1 and global.playerOutfit = 1 {
+			sprite_index = spr_PogoreU
+		} else if global.upButtonPressed1 {
+			sprite_index = spr_AsgoreU
+		}
+		
+		if global.rightButtonPressed1 and global.playerOutfit = 1 {
+			sprite_index = spr_PogoreR
+		} else if global.rightButtonPressed1 {
+			sprite_index = spr_AsgoreR
+		}
+		
+		if global.leftButtonPressed1 and global.playerOutfit = 1 {
+			sprite_index = spr_PogoreL
+		} else if global.leftButtonPressed1 {
+			sprite_index = spr_AsgoreL
+		}
+		
+	}
 }
 
 //don't shake
@@ -141,35 +177,42 @@ if(sprite_index = spr_AsgoreR or sprite_index = spr_PogoreR) {
 	facing_direction = 0
 }
 
-//save direction facing
-if (place_meeting(x, y, obj_save)) {
-	if (sprite_index = spr_AsgoreD or sprite_index = spr_PogoreD) {
-		facing_direction = 2
-	}
-	if (sprite_index = spr_AsgoreL or sprite_index = spr_PogoreL) {
-		facing_direction = 1
-	}
-	if (sprite_index = spr_AsgoreR or sprite_index = spr_PogoreR) {
-		facing_direction = 0
-	}
-	if (sprite_index = spr_AsgoreU or sprite_index = spr_PogoreU) {
-		facing_direction = 3
-	}
-}
-
 //update pos for party follow
 
-	if ((x != xprevious or y != yprevious) and !instance_exists(obj_fade)) {
-		for(follow_pos = follow_points - 1 ; follow_pos > 0 ; follow_pos--) {
-			player_x[follow_pos] = player_x[follow_pos - 1]
-			player_y[follow_pos] = player_y[follow_pos - 1]
-			
-			past_facing[follow_pos] = past_facing[follow_pos - 1]
-		}
+if ((x != xprevious or y != yprevious) and !instance_exists(obj_fade)) {
+	for(follow_pos = follow_points - 1 ; follow_pos > 0 ; follow_pos--) {
+		player_x[follow_pos] = player_x[follow_pos - 1]
+		player_y[follow_pos] = player_y[follow_pos - 1]
 		
-		player_x[0] = x
-		player_y[0] = y
-		past_facing[0] = sprite_index
+		past_facing[follow_pos] = past_facing[follow_pos - 1]
 	}
 	
+	player_x[0] = x
+	player_y[0] = y
+	past_facing[0] = sprite_index
+}
+
+//interact
+
+if global.selectButtonPressed and canMove = true {
 	
+	//down
+	if facing_direction = 2 {
+		instance_create_depth(x, y + 24, depth - 1, obj_interactLaserV)
+	}
+	
+	//up
+	if facing_direction = 3 {
+		instance_create_depth(x, y, depth - 1, obj_interactLaserV)
+	}
+	
+	//right
+	if facing_direction = 0 {
+		instance_create_depth(x + 8, y + 24, depth - 1, obj_interactLaserH)
+	}
+	
+	//left
+	if facing_direction = 1 {
+		instance_create_depth(x - 16, y + 24, depth - 1, obj_interactLaserH)
+	}
+}

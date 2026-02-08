@@ -2,6 +2,8 @@
 xspd = 0
 yspd = 0
 
+canMove = true
+
 isStopped = false
 
 move_spd = 2

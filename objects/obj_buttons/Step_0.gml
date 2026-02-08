@@ -13,24 +13,29 @@ if (menu = 1) {
 		audio_play_sound(sfx_select, 10, false)
 		menu = 2
 		selected = 0
+		timer6 = 1
 	}
 }
 
 //emnu 2
 if (menu = 2) {
 	//controls
-	if (selected = 1 and global.selectButtonPressed) {
-		audio_play_sound(sfx_select, 10, false)
-		menu = 3
-		selected = 0
-		timer = 1
+	if timer6 <= 0 {	
+		//controls
+		if (selected = 0 and global.selectButtonPressed) {
+			audio_play_sound(sfx_select, 10, false)
+			menu = 3
+			selected = 0
+			timer = 1
+		}
 	}
+	timer6--
 	
 	//cancel
 	if (keyboard_check_pressed(global.cancelButton)) {
 		audio_play_sound(sfx_select, 10, false)
 		menu = 1
-		selected = 2
+		selected = 1
 	}
 }
 
@@ -59,7 +64,7 @@ if (menu = 3) {
 	if (keyboard_check_pressed(global.cancelButton)) {
 		audio_play_sound(sfx_select, 10, false)
 		menu = 2
-		selected = 1
+		selected = 0
 	}
 }
 
@@ -463,9 +468,9 @@ if (menu = 1) {
 
 if (menu = 2) {
 	if (selected < 0) {
-		selected = 2
+		selected = 1
 	}
-	if (selected > 2) {
+	if (selected > 1) {
 		selected = 0
 	}
 }

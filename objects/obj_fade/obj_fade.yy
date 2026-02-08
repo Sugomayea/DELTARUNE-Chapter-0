@@ -11,8 +11,8 @@
   "name":"obj_fade",
   "overriddenProperties":[],
   "parent":{
-    "name":"functional objs",
-    "path":"folders/Objects/functional objs.yy",
+    "name":"other",
+    "path":"folders/Objects/functional objs/other.yy",
   },
   "parentObjectId":null,
   "persistent":true,
