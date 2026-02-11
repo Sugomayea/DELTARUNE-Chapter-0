@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":10,
   "conversionMode":0,
-  "duration":42.666668,
+  "duration":38.4,
   "exportDir":"",
   "name":"sng_titleScreen",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":48000,
   "soundFile":"sng_titleScreen.ogg",
-  "volume":0.3,
+  "volume":0.6,
 }

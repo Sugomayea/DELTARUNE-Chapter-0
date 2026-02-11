@@ -47,37 +47,40 @@ if (menu = 1) {
 if (menu = 2) {
 	if (selected = 0) {
 		draw_set_color(selectedColor)
-		draw_sprite(spr_heartSelectMenu, image_index, x - 20, y + 29)
+		draw_sprite(spr_heartSelectMenu, image_index, x - 25, y + 29)
 	} else {
 		draw_set_color(c_white)
 	}
-	draw_text(x - 10, y + 15, "Controls")
+	draw_text(x - 15, y + 15, "Controls")
 	
 	if (selected = 1) {
 		draw_set_color(selectedColor)
-		draw_sprite(spr_heartSelectMenu, image_index, x - 20, y + 64)
+		draw_sprite(spr_heartSelectMenu, image_index, x - 15, y + 64)
 	} else {
 		draw_set_color(c_white)
 	}
-	draw_text(x - 10, y + 50, "Volume")
+	draw_text(x - 5, y + 50, "Volume")
 }
 
 if (menu = 3) {
 	if (selected = 0) {
 		draw_set_color(selectedColor)
-		draw_sprite(spr_heartSelectMenu, image_index, x - 20, y + 29)
+		draw_sprite(spr_heartSelectMenu, image_index, x - 25, y + 29)
 	} else {
 		draw_set_color(c_white)
 	}
-	draw_text(x - 10, y + 15, "Movement")
+	draw_text(x - 15, y + 15, "Movement")
 	
 	if (selected = 1) {
 		draw_set_color(selectedColor)
-		draw_sprite(spr_heartSelectMenu, image_index, x - 20, y + 64)
+		draw_sprite(spr_heartSelectMenu, image_index, x - 5, y + 64)
 	} else {
 		draw_set_color(c_white)
 	}
-	draw_text(x - 10, y + 50, "Other")
+	draw_text(x + 5, y + 50, "Other")
+	
+	draw_set_color(c_white)
+	draw_text(x - 80, y + 110, "(Fullscreen - F4)")
 }
 
  if menu = 4{
